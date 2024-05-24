@@ -1,0 +1,23 @@
+---
+title: "Homework 03"
+author: "Emily Cunningham"
+format: html
+editor: visual
+---
+
+```{r Packages needed for workshop}
+library(tidyverse)
+library(readxl)
+library(here)
+library(janitor)
+library(GGally)
+library(MuMIn)
+library(ggeffects)
+library(gtsummary)
+library(flextable)
+library(modelsummary)
+
+  config_modelsummary(startup_message = FALSE)
+```
+
+
