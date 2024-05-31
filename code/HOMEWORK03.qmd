@@ -32,3 +32,5 @@ drought_exp <- read_xlsx(path = here("data",
 ```
 
 nonsense
+
+![](ANOVO.jpeg)
