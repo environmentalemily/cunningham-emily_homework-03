@@ -30,3 +30,5 @@ drought_exp <- read_xlsx(path = here("data",
                                      "Valliere_etal_EcoApps_Data.xlsx"),
                          sheet = "First Harvest")
 ```
+
+nonsense
