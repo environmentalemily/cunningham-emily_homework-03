@@ -212,7 +212,24 @@ model3 <- lm(total_g ~ sla + species_name,
 plot(model3)
 ```
 
+#4 Total biomass as a function of water treatment
+
 **look at the diagnostics!!!**
+
+```{r}
+
+model4 <- lm(total_g ~ water_treatment + species_name,
+             data = drought_exp_clean)
+plot(model4) #look at diagnostic
+
+
+
+
+```
+
+
+
+
 
 # Model selection
 

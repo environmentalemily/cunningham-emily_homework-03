@@ -5,7 +5,7 @@ format: html
 editor: visual
 ---
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 # general use
 library(tidyverse)
 library(readxl)
@@ -31,6 +31,18 @@ drought_exp <- read_xlsx(path = here("data",
                          sheet = "First Harvest")
 ```
 
-nonsense
+## Problem 1: **Multiple linear regression: model selection and construction**
 
-![](ANOVO.jpeg)
+a\.
+
+Table 1: Comparing Models of Predictor Variables For Total Biomass of Native Flowers
+
+| Model Number | Predictors                    | AIC    | Delta AIC |
+|--------------|-------------------------------|--------|-----------|
+| Null Model   | none                          | -0.75  | 81.22     |
+| Model 1      | SLA, water treatment, species | -153.8 | 2.44      |
+| Model 2      | SLA, water treatment          | -95.8  | 60.37     |
+| Model 3      | SLA, species                  | -124.1 | 32.12     |
+| Model 4      | water treatment, species      | -156.2 | 0.00      |
+
+: Columns of Table 1 are: Model Number, Predictors, AIC (Akaike Information Criterion) and Delta AIC. Each row represents a different model.
