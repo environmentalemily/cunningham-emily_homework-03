@@ -1,6 +1,7 @@
 ---
 title: "Homework 3"
 author: "Emily Cunningham"
+date: "05-31-2024"
 format: html
 editor: visual
 ---
@@ -31,9 +32,11 @@ drought_exp <- read_xlsx(path = here("data",
                          sheet = "First Harvest")
 ```
 
+link to repository: <https://github.com/environmentalemily/cunningham-emily_homework-03.git>
+
 ## Problem 1: **Multiple linear regression: model selection and construction**
 
-a\.
+a\. Creating a table
 
 Table 1: Comparing Models of Predictor Variables For Total Biomass of Native Flowers
 
@@ -46,3 +49,7 @@ Table 1: Comparing Models of Predictor Variables For Total Biomass of Native Flo
 | Model 4      | water treatment, species      | -156.2 | 0.00      |
 
 : Columns of Table 1 are: Model Number, Predictors, AIC (Akaike Information Criterion) and Delta AIC. Each row represents a different model.
+
+b\. Statistical methods
+
+To examine the influence of water treatment, SLA, and species type on total biomass I created 5 models. The null model depicts a model of total biomass with no predictors. Model 1 is a saturated model that depicts total biomass as a function of SLA, water treatment, and species type. Model 2 depicts total biomass as a function of SLA and water treatment. Model 3 depicts total biomass as a function of SLA and species type. Model 4 depicts total biomass as a function of water treatment and species type. To determine the model that best described the accurates predictor(s) of total biomass, I used the model.sel() command from the MuMIn package to create a model selection table, which ranks the models by AIC value. Model 4 had the lowest AIC value, and was therefore ranked first. To evaluate linear model assumptions I, looked at the AIC value, and the diagnostics for the model. I looked for homescedastic, normally distributed and standardized residuals.
