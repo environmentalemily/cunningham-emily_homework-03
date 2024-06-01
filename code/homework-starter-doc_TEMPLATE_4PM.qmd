@@ -239,11 +239,12 @@ From the `MuMIn` package
 model.sel(model0,
           model1, 
           model2, 
-          model3)
+          model3,
+          model4)
 ```
 
 Out of the four models we have tried, the best model is the one that includes **all three predictors (specific leaf area, water treatment, and species)**  
-
+**after running model4, it was selcted to be the best model**
 Note that this may change once you fit and compare the other model!  
 
 **look at the diagnostics again!!!!**
@@ -251,7 +252,7 @@ Note that this may change once you fit and compare the other model!
 # Model summary
 
 ```{r}
-summary(model1)
+summary(model4)
 ```
 
 What are the reference levels?  
@@ -275,11 +276,11 @@ Interpret the model estimates for the:
 **Note:** only plot terms in the model you select - if your doesn't include one of these terms, take it out and adjust the plotting code accordingly!
 
 ```{r}
-model_preds <- ggpredict(model1, 
-                         terms = c("sla",
-                                   "water_treatment", 
-                                   "species_name"))
+model_preds <- ggpredict(model4, 
+                         terms = c("water_treatment", 
+               "species_name"))
 
+view(model_preds)
 # use View(model_preds) to see the predictions as a data frame
 # use model_preds to see the predictions formatted nicely
 ```
@@ -304,7 +305,7 @@ The "more customizable" way:
 ```{r}
 # creating new data frame of model predictions for plotting
 model_preds_for_plotting <- model_preds %>% 
-  rename(sla = x, # renaming columns to make this easier to use
+  rename(sla= x, # renaming columns to make this easier to use
          water_treatment = group,
          species_name = facet)
 
@@ -335,6 +336,29 @@ ggplot() +
   # creating different panels for species
   facet_wrap(~species_name) 
 ```
+
+
+
+```{r}
+
+model_preds_for_plotting <- model_preds %>% 
+  rename("water treatment" = x)
+
+
+model_preds_for_plotting <- model_preds %>% 
+  rename(sla= x, # renaming columns to make this easier to use
+         water_treatment = group,
+         species_name = facet)
+
+
+```
+
+
+
+
+
+
+
 
 
 # Making a table

@@ -52,4 +52,27 @@ Table 1: Comparing Models of Predictor Variables For Total Biomass of Native Flo
 
 b\. Statistical methods
 
-To examine the influence of water treatment, SLA, and species type on total biomass I created 5 models. The null model depicts a model of total biomass with no predictors. Model 1 is a saturated model that depicts total biomass as a function of SLA, water treatment, and species type. Model 2 depicts total biomass as a function of SLA and water treatment. Model 3 depicts total biomass as a function of SLA and species type. Model 4 depicts total biomass as a function of water treatment and species type. To determine the model that best described the accurates predictor(s) of total biomass, I used the model.sel() command from the MuMIn package to create a model selection table, which ranks the models by AIC value. Model 4 had the lowest AIC value, and was therefore ranked first. To evaluate linear model assumptions I, looked at the AIC value, and the diagnostics for the model. I looked for homescedastic, normally distributed and standardized residuals.
+To examine the influence of water treatment, SLA, and species type on total biomass I created 5 models. The null model depicts a model of total biomass with no predictors. Model 1 is a saturated model that depicts total biomass as a function of SLA, water treatment, and species type. Model 2 depicts total biomass as a function of SLA and water treatment. Model 3 depicts total biomass as a function of SLA and species type. Model 4 depicts total biomass as a function of water treatment and species type. To determine the model that best described the accurates predictor(s) of total biomass, I used the model.sel() command from the MuMIn package to create a model selection table, which ranks the models by AIC value. Model 4 had the lowest AIC value, and was therefore ranked first. To evaluate linear model assumptions I, looked at the AIC value, and the diagnostics for the model. Beore fitting the model, I looked for a linear relationship between response and predictor variable, confirmed the variables are not influential on each other (independent), and after fitting the model, confirmed points had homoscedasticity (constant variance) of error, and a normally distributed error (which you can see on the qq plot).
+
+c\. visualization of the model predictions with underlying data for “best” model
+
+```{r}
+
+
+
+
+```
+
+d.  
+
+e.  
+
+## Problem 2: Affective data visualizations
+
+a\. For my data, an affective visualization would look like a collection of points represented by a water droplet shape. They would be organized in ascending order of mean high temperature by point. The left side of the drop will be outlined in a color to represent an activity (scuba, surf, swim, dip), and the right side of the drop will be outlined in a color to represent location (pool, stream, ocean). I was inspired by Giorgia Lupi's Week 44 "A Week of Distractions" piece.
+
+b\. Sketch of Visualization
+
+c\. Draft of Visualization
+
+d\. Artists Statement

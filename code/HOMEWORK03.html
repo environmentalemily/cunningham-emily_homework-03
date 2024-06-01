@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emily Cunningham">
+<meta name="dcterms.date" content="2024-05-31">
 
 <title>Homework 3</title>
 <style>
@@ -94,6 +95,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 31, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -126,9 +133,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Valliere_etal_EcoApps_Data.xlsx"</span>),</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                         <span class="at">sheet =</span> <span class="st">"First Harvest"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>link to repository: <a href="https://github.com/environmentalemily/cunningham-emily_homework-03.git" class="uri">https://github.com/environmentalemily/cunningham-emily_homework-03.git</a></p>
 <section id="problem-1-multiple-linear-regression-model-selection-and-construction" class="level2">
 <h2 class="anchored" data-anchor-id="problem-1-multiple-linear-regression-model-selection-and-construction">Problem 1: <strong>Multiple linear regression: model selection and construction</strong></h2>
-<p>a.</p>
+<p>a. Creating a table</p>
 <p>Table 1: Comparing Models of Predictor Variables For Total Biomass of Native Flowers</p>
 <table class="table">
 <caption>Columns of Table 1 are: Model Number, Predictors, AIC (Akaike Information Criterion) and Delta AIC. Each row represents a different model.</caption>
@@ -173,6 +181,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<p>b. Statistical methods</p>
+<p>To examine the influence of water treatment, SLA, and species type on total biomass I created 5 models. The null model depicts a model of total biomass with no predictors. Model 1 is a saturated model that depicts total biomass as a function of SLA, water treatment, and species type. Model 2 depicts total biomass as a function of SLA and water treatment. Model 3 depicts total biomass as a function of SLA and species type. Model 4 depicts total biomass as a function of water treatment and species type. To determine the model that best described the accurates predictor(s) of total biomass, I used the model.sel() command from the MuMIn package to create a model selection table, which ranks the models by AIC value. Model 4 had the lowest AIC value, and was therefore ranked first. To evaluate linear model assumptions I, looked at the AIC value, and the diagnostics for the model. I looked for homescedastic, normally distributed and standardized residuals.</p>
+<p>c. visualization of the model predictions with underlying data for “best” model</p>
 </section>
 
 </main>
