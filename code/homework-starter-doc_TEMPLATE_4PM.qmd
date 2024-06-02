@@ -325,16 +325,7 @@ ggplot() +
                   ymin = conf.low,
                   ymax = conf.high,
                   fill = water_treatment),
-              alpha = 0.2) +
-  # model prediction lines
-  geom_line(data = model_preds_for_plotting,
-            aes(x = sla, 
-                y = predicted,
-                color = water_treatment)) +
-  # cleaner theme
-  theme_classic() +
-  # creating different panels for species
-  facet_wrap(~species_name) 
+              alpha = 0.2) 
 ```
 
 
@@ -342,14 +333,23 @@ ggplot() +
 ```{r}
 
 model_preds_for_plotting <- model_preds %>% 
-  rename("water treatment" = x)
+  rename("water treatment" = x,
+         "species name" = group)
 
-
-model_preds_for_plotting <- model_preds %>% 
-  rename(sla= x, # renaming columns to make this easier to use
-         water_treatment = group,
-         species_name = facet)
-
+ggplot() +
+  # underlying data
+  geom_point(data = drought_exp_clean,
+             aes(x = species_name,
+                 y = total_g,
+                 color = water_treatment)) +
+  # model prediction 95% CI ribbon
+  geom_ribbon(data = model_preds_for_plotting,
+              aes(x = species, 
+                  y = predicted,
+                  ymin = conf.low,
+                  ymax = conf.high,
+                  fill = water_treatment),
+              alpha = 0.2) 
 
 ```
 

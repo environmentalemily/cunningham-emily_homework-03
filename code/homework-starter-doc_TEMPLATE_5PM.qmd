@@ -317,6 +317,46 @@ ggplot() +
   # creating different panels for species
   facet_wrap(~species_name) 
 ```
+```{r}
+feedingtrials %>% 
+group_by(trial, tissue, type) %>%# group the columns together
+ggplot(aes(x = type, # x- axis is control/ treatment group
+y = dryweight,
+color = tissue)) + # color by tissue type
+geom_point(position = position_jitter(width = 0.15,
+                                      seed = 3),
+alpha = 0.25) + #increases opacity of data points
+stat_summary(geom = "pointrange",
+fun.data = mean_cl_normal) +
+facet_wrap(~trial + tissue,
+nrow = 1) +
+labs(x = " ",
+y = "Dry Weight of Biomass (grams)",
+title = "Figure 1") +
+theme_classic() +
+scale_color_manual(values = c( "#5F9EA0", "#8B7500")) + #select specific color codes
+theme_classic() +
+guides(color = "none") # suppress the key
+```
+
+
+Trying to make visualization for HW:
+```{r}
+
+ggpredict(model4,
+          terms = c("water_treatment",
+                    "species_name")) %>% 
+  plot(show_data = TRUE) +
+ theme_classic() +
+guides(color = "none") # suppress the key
+
+
+
+
+
+
+```
+
 
 
 # Making a table
