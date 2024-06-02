@@ -71,7 +71,7 @@ e.
 
 ## Problem 2: Affective data visualizations
 
-a\. For my data, an affective visualization would look like a collection of points represented by a water droplet shape. They would be organized in ascending order of mean high temperature by point. The left side of the drop will be outlined in a color to represent an activity (scuba, surf, swim, dip), and the right side of the drop will be outlined in a color to represent location (pool, stream, ocean). I was inspired by Giorgia Lupi's Week 44 "A Week of Distractions" piece.
+a\. For my data, an affective visualization would look like a collection of points represented by a water droplet shape. They would be organized in order. The left side of the drop will be outlined in a color to represent an activity (scuba, surf, swim, dip), and the right side of the drop will be outlined in a color to represent location (pool, stream, ocean).
 
 b\. Sketch of Visualization
 
@@ -82,3 +82,15 @@ c\. Draft of Visualization
 ![](images/IMG_0036.jpg)
 
 d\. Artists Statement
+
+My piece uses water droplets to represent observations (1-39) from my personal data collection, where I recorded the activity I performed in the water each day, even if it was just an ocean dip. Within and around these water drop I show what the specific activity was, what body of water I performed that activity in, and what the high temperature of that day was. After looking through the whole site, I was really inspired by Giorgia Lupi's Week 44 "A Week of Distractions" piece, and actually directly used her outline– tweaking it to fit my variables. I quickly made a wrangled data frame in R with my updated data sheet so that I could easily navigate it, then drew out 39 water droplets on watercolor paper. I created a color key on my brainstorm paper, then filled in the droplets using watercolors appropriately. I added dashed lines to notable good days( i.e. when I got to scuba in the ocean the first time, or hiking to Seven Falls with friends).
+
+## Problem 3: Statistical Critique
+
+a\. Revisit and Summarize
+
+b\. Visual Clarity
+
+c\. Aesthetic Clarity
+
+d\. Recommendations
