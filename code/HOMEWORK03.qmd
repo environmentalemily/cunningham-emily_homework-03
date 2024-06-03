@@ -83,7 +83,7 @@ c\. Draft of Visualization
 
 d\. Artist Statement
 
-My piece uses water droplets to represent observations (1-39) from my personal data collection, where I recorded the activity I performed in the water each day, even if it was just an ocean dip. Within and around these water drop I show what the specific activity was, what body of water I performed that activity in, and what the high temperature of that day was. After looking through the whole site, I was really inspired by Giorgia Lupi's Week 44 "A Week of Distractions" piece, and actually directly used her outline– tweaking it to fit my variables. I quickly made a wrangled data frame in R with my updated data sheet so that I could easily navigate it, then drew out 39 water droplets on watercolor paper. I created a color key on my brainstorm paper, then filled in the droplets using watercolors appropriately. I added dashed lines to notable good days( i.e. when I got to scuba in the ocean the first time, or hiking to Seven Falls with friends).
+My piece uses water droplets to represent observations (1-39) from my personal data collection, where I recorded the activity I performed in the water each day, even if it was just an ocean dip. Within and around these water drop I show what the specific activity was, what body of water I performed that activity in, and what the high temperature of that day was. After looking through the whole site, I was really inspired by Giorgia Lupi's "A Week of Distractions" (Week 44) piece, and actually directly used her outline– tweaking it to fit my variables. I quickly made a wrangled data frame in R with my updated data sheet so that I could easily navigate it, then drew out 39 water droplets on watercolor paper. I created a color key on my brainstorm paper, then filled in the droplets using watercolors appropriately. I added dashed lines to notable good days( i.e. when I got to scuba in the ocean the first time, or hiking to Seven Falls with friends).
 
 ## Problem 3: Statistical Critique
 
@@ -91,7 +91,7 @@ a\. Revisit and Summarize
 
 The authors used a univariate ANOVA, Tukey post hoc, and a Kruskal Wallace test to address their main research question "does temperature stress affect Collinsia herterophylia, an annual mix- mated hermaphrodite, and if so– how? ".
 
-Figures:
+Figures 1:
 
 ![](images/Figure1-01.jpeg){width="407"}
 
@@ -99,11 +99,15 @@ Figures:
 
 -   ANOVA figure b: The x- axis is treatments, and the y is reproductive investments.
 
+Figure 2:
+
 ![](images/herkogamy.jpeg){width="413"}
 
 -   The Kruskal- Wallis test to analyze herkogamy figure a: The x-axis is treatments, and the y- axis is floral traits.
 
 -   Kruskal- Wallace figure b: The x- axis is treatments and the y-axis is herkogamy.
+
+Figure 3:
 
 ![](images/fecundity.jpeg){width="414"}
 
@@ -112,6 +116,8 @@ Figures:
 -   Kruskal- Wallace test to analyze fecundity figure b: The x-axis is treatments and the y-axis is fecundity traits.
 
 b\. Visual Clarity
+
+For all three figures: The authors represented their statistics accureatly in their figure(s). The x and y axis are in a logical position to compare growth and reproductive data to each treatment. Underlying data is not shown, instead concise bar charts were created to represent the treatments applied (control, dry, hot, hot and dry). The authors do show summary statistics (bars represent the ±SE of the different traits), and bars with different letters indicate statistically significant differences between treatments at p \[less than\] 0.001.
 
 c\. Aesthetic Clarity
 
