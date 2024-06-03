@@ -65,9 +65,9 @@ c\. visualization of the model predictions with underlying data for “best” m
 
 ```
 
-d.  
+d\.
 
-e.  
+e\. The predictors that best described total mass are water treatments and species (model 4). On average, well- watered plants had higher total mass than those with the drought stressed treatment. On average, gumweed, california poppy, and purple needlegrass seem to have the highest biomass; deerweed, scarlet bugler, and purple sage seem to have the lowest biomass.
 
 ## Problem 2: Affective data visualizations
 
