@@ -212,6 +212,23 @@ plot(model3)
 
 **look at the diagnostics for this model too!!!!**
 
+# Model 4: biomass as a unction of water treatment and species name
+
+```{r}
+model4 <- lm(total_g ~ water_treatment + species_name,
+             data = drought_exp_clean)
+
+plot(model4)
+
+
+
+```
+
+
+
+
+
+
 
 # Model selection
 
@@ -221,7 +238,8 @@ From the `MuMIn` package
 model.sel(model0,
           model1, 
           model2, 
-          model3)
+          model3,
+          model4)
 ```
 
 Out of the four models we have tried, the best model is the one that includes **specific leaf area, water treatment, and species (saturated model)**  
@@ -233,7 +251,7 @@ Note that this may change once you fit and compare the other model!
 # Model summary
 
 ```{r}
-summary(model1)
+summary_04 <- summary(model4)
 ```
 
 What are the reference levels?  
@@ -257,11 +275,10 @@ Interpret the model estimates for the:
 **Note:** only plot terms in the model you select - if your doesn't include one of these terms, take it out and adjust the plotting code accordingly!
 
 ```{r}
-model_preds <- ggpredict(model1, 
-                         terms = c("sla",
-                                   "water_treatment", 
+model_preds <- ggpredict(model4, 
+                         terms = c("water_treatment", 
                                    "species_name"))
-
+view(model_preds)
 # use View(model_preds) to see the predictions as a data frame
 # use model_preds to see the predictions formatted nicely
 ```
@@ -287,8 +304,8 @@ The "more customizable" way:
 # creating new data frame of model predictions for plotting
 model_preds_for_plotting <- model_preds %>% 
   rename(sla = x, # renaming columns to make this easier to use
-         water_treatment = group,
-         species_name = facet)
+         water_treatment = x,
+         species_name = group)
 
 # use View(model_preds_for_plotting) 
 # to compare this to the original model_preds data frame
@@ -296,59 +313,106 @@ model_preds_for_plotting <- model_preds %>%
 ggplot() +
   # underlying data
   geom_point(data = drought_exp_clean,
-             aes(x = sla,
+             aes(x = species_name,
                  y = total_g,
                  color = water_treatment)) +
-  # model prediction 95% CI ribbon
-  geom_ribbon(data = model_preds_for_plotting,
-              aes(x = sla, 
-                  y = predicted,
-                  ymin = conf.low,
-                  ymax = conf.high,
-                  fill = water_treatment),
-              alpha = 0.2) +
-  # model prediction lines
-  geom_line(data = model_preds_for_plotting,
-            aes(x = sla, 
-                y = predicted,
-                color = water_treatment)) +
   # cleaner theme
   theme_classic() +
+scale_color_manual(values = c( "#5F9EA0", "#8B7500")) +
   # creating different panels for species
-  facet_wrap(~species_name) 
-```
-```{r}
-feedingtrials %>% 
-group_by(trial, tissue, type) %>%# group the columns together
-ggplot(aes(x = type, # x- axis is control/ treatment group
-y = dryweight,
-color = tissue)) + # color by tissue type
-geom_point(position = position_jitter(width = 0.15,
-                                      seed = 3),
-alpha = 0.25) + #increases opacity of data points
-stat_summary(geom = "pointrange",
-fun.data = mean_cl_normal) +
-facet_wrap(~trial + tissue,
-nrow = 1) +
-labs(x = " ",
-y = "Dry Weight of Biomass (grams)",
-title = "Figure 1") +
-theme_classic() +
-scale_color_manual(values = c( "#5F9EA0", "#8B7500")) + #select specific color codes
-theme_classic() +
-guides(color = "none") # suppress the key
+  facet_wrap(~ species_name) +
+theme(legend.position = "none") +
+    labs(title = "Biomass Predicted By Water Treament and Species", 
+         x = "Water Treatment",
+         y = "Total Biomass")
 ```
 
+creating a table for personal data
 
-Trying to make visualization for HW:
+Creating a visualization
 ```{r}
 
-ggpredict(model4,
-          terms = c("water_treatment",
-                    "species_name")) %>% 
-  plot(show_data = TRUE) +
- theme_classic() +
-guides(color = "none") # suppress the key
+# Create a data frame with predictions
+drought_exp_clean$predicted <- predict(model4, drought_exp_clean)
+
+# generate the plot
+drought_exp_clean %>% 
+  ggplot(aes(x = water_treatment,
+             y = total_g)) +
+  geom_jitter(aes(color = water_treatment), alpha = 0.3, width = 0.2) +  # Jittered underlying data points
+  geom_point(aes(y = predicted, color = water_treatment), size = 2) +
+  facet_wrap(~ species_name) + # facet by species
+  labs(
+    title = "Model 4 Predictions with Underlying Data",
+    x = "Water Treatment",
+    y = "Total Biomass (g)"
+  ) +
+  scale_color_manual(values = c("Drought stressed" = "#8B795E", 
+                                "Well watered" = "#9ACD32")) +
+  theme_minimal() +
+  theme(
+    legend.position = "none",  # removes legend of colors
+    strip.text = element_text(size = 10, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+
+
+
+```
+
+
+```{r}
+#creating a plot using ggplot using customizable code for visualizations from workshop
+
+# Create a data frame that includes origincal data with predictions from model 4
+
+drought_exp_clean$predicted <- predict(model4, drought_exp_clean)
+
+# generate the plot
+drought_exp_clean %>% 
+  ggplot(aes(x = water_treatment,
+             y = total_g)) +
+  geom_jitter(aes(color = water_treatment), alpha = 0.3, width = 0.2) +  # Jittered underlying data points
+  geom_point(aes(y = predicted, color = water_treatment), size = 2) +
+  facet_wrap(~ species_name) + # facet by species
+  labs(
+    title = "Model 4 Predictions vs Actual Data",
+    x = "Water Treatment",
+    y = "Total Biomass (g)"
+  ) +
+  scale_color_manual(values = c("Drought stressed" = "#8B795E", 
+                                "Well watered" = "#9ACD32")) +
+  theme_minimal() +
+  theme(
+    legend.position = "none",  # removes legend of colors
+    strip.text = element_text(size = 10, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+```
+
+
+
+
+
+
+
+
+
+```
+```{r}
+#trying a new way to make a visualization (using method from workshop 2)
+
+ggplot(model_preds_for_plotting,
+       aes(x = species_name,
+           y = total_g,
+           color = water_treatment)) +
+geom_point(position = position_jitter (width = 0.5,
+seed = 1),
+alpha = 0.2) +
+geom_pointrange(data = summary_04,
+aes( x = ))
 
 
 

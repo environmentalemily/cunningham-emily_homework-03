@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emily Cunningham">
-<meta name="dcterms.date" content="2024-05-31">
+<meta name="dcterms.date" content="2024-06-02">
 
 <title>Homework 3</title>
 <style>
@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 31, 2024</p>
+      <p class="date">June 2, 2024</p>
     </div>
   </div>
   
@@ -184,13 +184,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>b. Statistical methods</p>
 <p>To examine the influence of water treatment, SLA, and species type on total biomass I created 5 models. The null model depicts a model of total biomass with no predictors. Model 1 is a saturated model that depicts total biomass as a function of SLA, water treatment, and species type. Model 2 depicts total biomass as a function of SLA and water treatment. Model 3 depicts total biomass as a function of SLA and species type. Model 4 depicts total biomass as a function of water treatment and species type. To determine the model that best described the accurate predictor(s) of total biomass, I used the model.sel() command from the MuMIn package to create a model selection table, which ranks the models by AIC value. Model 4 had the lowest AIC value, and was therefore ranked first. To evaluate linear model assumptions I, looked at the AIC value, and the diagnostics for the model. Before fitting the model, I looked for a linear relationship between response and predictor variable, confirmed the variables are not influential on each other (independent), and after fitting the model, confirmed points had homoscedasticity (constant variance) of error, and a normally distributed error (which you can see on the qq plot).</p>
 <p>c. visualization of the model predictions with underlying data for “best” model</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creating a plot using </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="4" type="a">
-<li></li>
-<li></li>
-</ol>
+<p><img src="images/Screenshot%202024-06-02%20at%2011.15.51%20PM.png" class="img-fluid"></p>
+<p>*This is the code used to create the visualization below, but I had an issue rendering after playing around with the code in a another qaurto doc and rendering it to see how it would look.</p>
+<p><img src="images/visualization.png" class="img-fluid"></p>
+<p>d. Creating a Caption:</p>
+<p>Data from: Can we condition native plants to increase drought tolerance and improve restoration success? [Dataset]. Dryad. https://doi.org/10.5061/dryad.v0861f7.</p>
+<p>The visualization titled “Model 4 Predictions vs Actual Data” compares total biomass (y- axis) to data from treatments (drought stressed and well watered) by species. The brown data points represent drought stressed conditions, and bright green represents well watered treatments. Dark data points represent predictions made by model 4.</p>
+<p>e.</p>
+<p>The predictors that best described total mass are water treatments and species (model 4). On average, well- watered plants had higher total mass than those with the drought stressed treatment. On average, gumweed, california poppy, and purple needlegrass seem to have the highest biomass; deerweed, scarlet bugler, and purple sage seem to have the lowest biomass.</p>
 </section>
 <section id="problem-2-affective-data-visualizations" class="level2">
 <h2 class="anchored" data-anchor-id="problem-2-affective-data-visualizations">Problem 2: Affective data visualizations</h2>
@@ -200,31 +201,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>c. Draft of Visualization</p>
 <p><img src="images/IMG_0036.jpg" class="img-fluid"></p>
 <p>d. Artist Statement</p>
-<p>My piece uses water droplets to represent observations (1-39) from my personal data collection, where I recorded the activity I performed in the water each day, even if it was just an ocean dip. Within and around these water drop I show what the specific activity was, what body of water I performed that activity in, and what the high temperature of that day was. After looking through the whole site, I was really inspired by Giorgia Lupi’s Week 44 “A Week of Distractions” piece, and actually directly used her outline– tweaking it to fit my variables. I quickly made a wrangled data frame in R with my updated data sheet so that I could easily navigate it, then drew out 39 water droplets on watercolor paper. I created a color key on my brainstorm paper, then filled in the droplets using watercolors appropriately. I added dashed lines to notable good days( i.e.&nbsp;when I got to scuba in the ocean the first time, or hiking to Seven Falls with friends).</p>
+<p>My piece uses water droplets to represent observations (1-39) from my personal data collection, where I recorded the activity I performed in the water each day, even if it was just an ocean dip. Within and around these water drop I show what the specific activity was, what body of water I performed that activity in, and what the high temperature of that day was. After looking through the whole site, I was really inspired by Giorgia Lupi’s “A Week of Distractions” (Week 44) piece, and actually directly used her outline– tweaking it to fit my variables. I quickly made a wrangled data frame in R with my updated data sheet so that I could easily navigate it, then drew out 39 water droplets on watercolor paper. I created a color key on my brainstorm paper, then filled in the droplets using watercolors appropriately. I added dashed lines to notable good days( i.e.&nbsp;when I got to scuba in the ocean the first time, or hiking to Seven Falls with friends).</p>
 </section>
 <section id="problem-3-statistical-critique" class="level2">
 <h2 class="anchored" data-anchor-id="problem-3-statistical-critique">Problem 3: Statistical Critique</h2>
 <p>a. Revisit and Summarize</p>
 <p>The authors used a univariate ANOVA, Tukey post hoc, and a Kruskal Wallace test to address their main research question “does temperature stress affect Collinsia herterophylia, an annual mix- mated hermaphrodite, and if so– how?”.</p>
-<p>Figures:</p>
+<p>Figures 1:</p>
 <p><img src="images/Figure1-01.jpeg" class="img-fluid" width="407"></p>
 <ul>
 <li><p>ANOVA figure a: The x- axis is treatments, and the y- axis is plant growth traits.</p></li>
 <li><p>ANOVA figure b: The x- axis is treatments, and the y is reproductive investments.</p></li>
 </ul>
+<p>Figure 2:</p>
 <p><img src="images/herkogamy.jpeg" class="img-fluid" width="413"></p>
 <ul>
 <li><p>The Kruskal- Wallis test to analyze herkogamy figure a: The x-axis is treatments, and the y- axis is floral traits.</p></li>
 <li><p>Kruskal- Wallace figure b: The x- axis is treatments and the y-axis is herkogamy.</p></li>
 </ul>
+<p>Figure 3:</p>
 <p><img src="images/fecundity.jpeg" class="img-fluid" width="414"></p>
 <ul>
 <li><p>The Kruskal- Wallace test to analyze fecundity (ability to produce abundance of offspring) figure a: The x- axis is treatments and the y-axis is male functions.</p></li>
 <li><p>Kruskal- Wallace test to analyze fecundity figure b: The x-axis is treatments and the y-axis is fecundity traits.</p></li>
 </ul>
 <p>b. Visual Clarity</p>
+<p>For all three figures: The authors represented their statistics accureatly in their figure(s). The x and y axis are in a logical position to compare growth and reproductive data to each treatment. Underlying data is not shown, instead concise bar charts were created to represent the treatments applied (control, dry, hot, hot and dry). The authors do show summary statistics (bars represent the ±SE of the different traits), and bars with different letters indicate statistically significant differences between treatments at p [less than] 0.001.</p>
 <p>c. Aesthetic Clarity</p>
+<p>There is no visual clutter because there is no underlying data displayed, and each treatment is represented by a a level of shading. I would describe the data:ink ratio as relatively even. There is no extra labeling, the key is effective, and the data is ready to read and infer.</p>
 <p>d. Recommendations</p>
+<p>Just because I now know that beautiful data is more fun to read, and easier to get people to pay attention now– I would recommend using a color array instead of various shades of black to represent the treatments of this experiment.</p>
 </section>
 
 </main>

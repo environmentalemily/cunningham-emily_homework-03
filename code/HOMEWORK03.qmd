@@ -1,7 +1,7 @@
 ---
 title: "Homework 3"
 author: "Emily Cunningham"
-date: "05-31-2024"
+date: "06-02-2024"
 format: html
 editor: visual
 ---
@@ -56,18 +56,21 @@ To examine the influence of water treatment, SLA, and species type on total biom
 
 c\. visualization of the model predictions with underlying data for “best” model
 
-```{r}
-#creating a plot using 
+![](images/Screenshot 2024-06-02 at 11.15.51 PM.png)
 
+\*This is the code used to create the visualization below, but I had an issue rendering after playing around with the code in a another qaurto doc and rendering it to see how it would look.
 
+![](images/visualization.png)
 
+d\. Creating a Caption:
 
+Data from: Can we condition native plants to increase drought tolerance and improve restoration success? \[Dataset\]. Dryad. https://doi.org/10.5061/dryad.v0861f7.
 
-```
+The visualization titled "Model 4 Predictions vs Actual Data" compares total biomass (y- axis) to data from treatments (drought stressed and well watered) by species. The brown data points represent drought stressed conditions, and bright green represents well watered treatments. Dark data points represent predictions made by model 4.
 
-d\.
+e\.
 
-e\. The predictors that best described total mass are water treatments and species (model 4). On average, well- watered plants had higher total mass than those with the drought stressed treatment. On average, gumweed, california poppy, and purple needlegrass seem to have the highest biomass; deerweed, scarlet bugler, and purple sage seem to have the lowest biomass.
+The predictors that best described total mass are water treatments and species (model 4). On average, well- watered plants had higher total mass than those with the drought stressed treatment. On average, gumweed, california poppy, and purple needlegrass seem to have the highest biomass; deerweed, scarlet bugler, and purple sage seem to have the lowest biomass.
 
 ## Problem 2: Affective data visualizations
 
@@ -121,4 +124,8 @@ For all three figures: The authors represented their statistics accureatly in th
 
 c\. Aesthetic Clarity
 
+There is no visual clutter because there is no underlying data displayed, and each treatment is represented by a a level of shading. I would describe the data:ink ratio as relatively even. There is no extra labeling, the key is effective, and the data is ready to read and infer.
+
 d\. Recommendations
+
+Just because I now know that beautiful data is more fun to read, and easier to get people to pay attention now– I would recommend using a color array instead of various shades of black to represent the treatments of this experiment.
