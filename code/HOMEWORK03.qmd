@@ -128,4 +128,4 @@ There is no visual clutter because there is no underlying data displayed, and ea
 
 d\. Recommendations
 
-Just because I now know that beautiful data is more fun to read, and easier to get people to pay attention now– I would recommend using a color array instead of various shades of black to represent the treatments of this experiment.
+Just because I now know that beautiful data is more fun to read, and easier to get people to pay attention now– I would recommend using a color array instead of various shades of black to represent the treatments of this experiment. I believe that all of the statistics are displayed in the most accurate way they could be.
